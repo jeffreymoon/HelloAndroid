@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 
 public class Sudoku extends ActionBarActivity implements OnClickListener {
 
@@ -15,13 +16,13 @@ public class Sudoku extends ActionBarActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        View continueButton = this.findViewById(R.id.continue_button);
+        Button continueButton = (Button)findViewById(R.id.continue_button);
         continueButton.setOnClickListener(this);
-        View newButton = this.findViewById(R.id.new_button);
+        Button newButton = (Button)findViewById(R.id.new_button);
         newButton.setOnClickListener(this);
-        View aboutButton = this.findViewById(R.id.about_button);
+        Button aboutButton = (Button)findViewById(R.id.about_button);
         aboutButton.setOnClickListener(this);
-        View exitButton = this.findViewById(R.id.exit_button);
+        Button exitButton = (Button)findViewById(R.id.exit_button);
         exitButton.setOnClickListener(this);
     }
 
