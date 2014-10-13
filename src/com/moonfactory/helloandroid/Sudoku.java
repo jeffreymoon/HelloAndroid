@@ -1,8 +1,11 @@
 package com.moonfactory.helloandroid;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -11,6 +14,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class Sudoku extends ActionBarActivity implements OnClickListener {
+
+    private static final String TAG = "Sudoku";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +38,35 @@ public class Sudoku extends ActionBarActivity implements OnClickListener {
         case R.id.about_button:
             Intent i = new Intent(this, About.class);
             startActivity(i);
-            break;
+        break;
+        case R.id.new_button:
+            openNewGameDialog();
+        break;
+        case R.id.exit_button:
+            finish();
+        break;
         default:
-            break;
+        break;
         }
     }
     
+    private void openNewGameDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.new_game_title)
+                .setItems(R.array.difficulty,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(
+                                    DialogInterface dialoginterface, int i) {
+                                startGame(i);
+                            }
+                        }).show();
+
+    }
+    
+    private void startGame(int i) {
+        Log.d(TAG , "clicked on " + i);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
