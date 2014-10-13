@@ -28,6 +28,10 @@
             android:theme="@android:style/Theme.Dialog" >
             
         </activity>
+        <activity
+            android:name=".Settings"
+            android:label="@string/setttings_title" >
+        </activity>
     </application>
 
 </manifest>
