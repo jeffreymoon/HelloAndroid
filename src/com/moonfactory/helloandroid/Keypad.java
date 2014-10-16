@@ -36,13 +36,13 @@ public class Keypad extends Dialog{
     private void setListeners() {
         for (int i = 0; i < keys.length; i++) {
             final int t = i + 1;
-            keys[i].setOnClickListener(new OnClickListener() {
+            keys[i].setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     returnResult(t);
                 }
             });
         }
-        keypad.setOnClickListener(new OnClickListener() {
+        keypad.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 returnResult(0);
             }
