@@ -97,4 +97,16 @@ public class Sudoku extends ActionBarActivity implements OnClickListener {
 //        }
 //        return super.onOptionsItemSelected(item);
     }
+    
+    @Override
+    public void onResume() {
+        super.onResume();
+        Music.play(this, R.raw.up);
+    }
+    
+    @Override
+    public void onPause() {
+        super.onPause();
+        Music.stop(this);
+    }
 }

@@ -36,6 +36,7 @@
             android:name=".Game"
             android:label="@string/game_title" >
         </activity>
+        
     </application>
 
 </manifest>
