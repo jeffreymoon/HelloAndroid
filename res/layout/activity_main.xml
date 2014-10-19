@@ -24,6 +24,18 @@
         android:layout_marginBottom="25dip"
         android:textSize="24.5sp" />
     
+    <EditText
+        android:id="@+id/url_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:lines="1" />
+    <Button
+        android:id="@+id/go_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/go_button" />
+    
     <Button
         android:id="@+id/continue_button"
         android:layout_width="match_parent"
@@ -44,7 +56,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/exit_label" />
-    
+
     </LinearLayout>
+    
+    <WebView 
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0" />
 
 </LinearLayout>

@@ -33,6 +33,9 @@ public class Game extends Activity {
             "000000700706040102004000000" +
             "000720903090301080000000600";
 
+    private static final String PREF_PUZZLE = "puzzle";
+    protected static final int DIFFICULTY_CONTINUE = -1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +48,8 @@ public class Game extends Activity {
         puzzleView = new PuzzleView(this);
         setContentView(puzzleView);
         puzzleView.requestFocus();
+        
+        getIntent().putExtra(KEY_DIFFICULTY, DIFFICULTY_CONTINUE);
         
     }
     
@@ -150,6 +155,9 @@ public class Game extends Activity {
     private int[] getPuzzle(int diff) {
         String puz;
         switch (diff) {
+        case DIFFICULTY_CONTINUE:
+            puz = getPreferences(MODE_PRIVATE).getString(PREF_PUZZLE, easyPuzzle);
+            break;
         case DIFFICULTY_HARD:
             puz = hardPuzzle;
             break;
@@ -207,6 +215,11 @@ public class Game extends Activity {
     @Override
     public void onPause() {
         super.onPause();
+        Log.d(TAG, "onPause");
         Music.stop(this);
+        
+        // save current puzzle
+        getPreferences(MODE_PRIVATE).edit().putString(PREF_PUZZLE , toPuzzleString(puzzle)).commit();
     }
+    
 }

@@ -36,7 +36,14 @@
             android:name=".Game"
             android:label="@string/game_title" >
         </activity>
-        
+        <activity
+            android:name=".BrowserIntent"
+            android:label="string/browser_title" >
+        </activity>
+        <activity
+            android:name=".BrowserView"
+            android:label="string/browser_title" >
+        </activity>
     </application>
 
 </manifest>
