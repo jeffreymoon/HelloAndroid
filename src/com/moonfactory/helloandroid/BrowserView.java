@@ -21,9 +21,9 @@ public class BrowserView extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        urlText = (EditText)findViewById(R.id.url_field);
-        goButton = (Button)findViewById(R.id.go_button);
-        webView = (WebView)findViewById(R.id.web_view);
+//        urlText = (EditText)findViewById(R.id.url_field);
+//        goButton = (Button)findViewById(R.id.go_button);
+//        webView = (WebView)findViewById(R.id.web_view);
         
         goButton.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {

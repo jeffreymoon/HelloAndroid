@@ -206,20 +206,20 @@ public class Game extends Activity {
         }
     }
     
-    @Override
-    public void onResume() {
-        super.onResume();
-        Music.play(this, R.raw.left);
-    }
-    
-    @Override
-    public void onPause() {
-        super.onPause();
-        Log.d(TAG, "onPause");
-        Music.stop(this);
-        
-        // save current puzzle
-        getPreferences(MODE_PRIVATE).edit().putString(PREF_PUZZLE , toPuzzleString(puzzle)).commit();
-    }
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        Music.play(this, R.raw.left);
+//    }
+//    
+//    @Override
+//    public void onPause() {
+//        super.onPause();
+//        Log.d(TAG, "onPause");
+//        Music.stop(this);
+//        
+//        // save current puzzle
+//        getPreferences(MODE_PRIVATE).edit().putString(PREF_PUZZLE , toPuzzleString(puzzle)).commit();
+//    }
     
 }

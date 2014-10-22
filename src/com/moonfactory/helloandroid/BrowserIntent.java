@@ -21,8 +21,8 @@ public class BrowserIntent extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        urlText = (EditText)findViewById(R.id.url_field);
-        goButton = (Button)findViewById(R.id.go_button);
+//        urlText = (EditText)findViewById(R.id.url_field);
+//        goButton = (Button)findViewById(R.id.go_button);
         
         goButton.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {

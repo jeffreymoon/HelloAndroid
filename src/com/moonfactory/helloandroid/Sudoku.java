@@ -37,6 +37,7 @@ public class Sudoku extends ActionBarActivity implements OnClickListener {
         switch(v.getId()) {
         case R.id.continue_button:
             startGame(Game.DIFFICULTY_CONTINUE);
+            startService(new Intent(".Music"));
             break;
         case R.id.about_button:
             Intent i = new Intent(this, About.class);
@@ -44,8 +45,11 @@ public class Sudoku extends ActionBarActivity implements OnClickListener {
         break;
         case R.id.new_button:
             openNewGameDialog();
+            startService(new Intent(".Music"));
+            
         break;
         case R.id.exit_button:
+            stopService(new Intent(".Music"));
             finish();
         break;
         default:
@@ -101,15 +105,15 @@ public class Sudoku extends ActionBarActivity implements OnClickListener {
 //        return super.onOptionsItemSelected(item);
     }
     
-    @Override
-    public void onResume() {
-        super.onResume();
-        Music.play(this, R.raw.up);
-    }
-    
-    @Override
-    public void onPause() {
-        super.onPause();
-        Music.stop(this);
-    }
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        Music.play(this, R.raw.up);
+//    }
+//    
+//    @Override
+//    public void onPause() {
+//        super.onPause();
+//        Music.stop(this);
+//    }
 }
